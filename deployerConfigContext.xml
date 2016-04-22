@@ -87,8 +87,8 @@
       class="com.mchange.v2.c3p0.ComboPooledDataSource"
      p:driverClass="com.mysql.jdbc.Driver"
      p:jdbcUrl="jdbc:mysql://localhost:3306/cas?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull"
-      p:user="cas"
-      p:password="cas" 
+      p:user="root"
+      p:password="" 
       />
 
     <!-- 密码加密方式-->
