@@ -59,7 +59,7 @@ ADD deployerConfigContext.xml /
 ADD mysql-connector-java-5.1.28-bin.jar /
 RUN mv deployerConfigContext.xml /var/lib/tomcat7/webapps/cas/WEB-INF/deployerConfigContext.xml; \
 	mv mysql-connector-java-5.1.28-bin.jar /var/lib/tomcat7/webapps/cas/WEB-INF/lib
-RUN http://central.maven.org/maven2/c3p0/c3p0/0.9.1.2/c3p0-0.9.1.2.jar \
+RUN wget http://central.maven.org/maven2/c3p0/c3p0/0.9.1.2/c3p0-0.9.1.2.jar \
 	mv c3p0-0.9.1.2.jar /var/lib/tomcat7/webapps/cas/WEB-INF/lib;
 
 EXPOSE 22
