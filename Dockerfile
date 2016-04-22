@@ -1,6 +1,6 @@
 FROM wnameless/mysql-phpmyadmin
 
-MAINTAINER Wei-Ming Wu <wnameless@gmail.com>
+MAINTAINER Yu LIN <uynill@163.com>
 
 # Install libfuse2
 RUN apt-get install -y libfuse2; \
@@ -37,13 +37,13 @@ RUN sed -i "s#</Server>##g" /etc/tomcat7/server.xml; \
 
 # Install CAS server
 RUN cd /tmp; \
-	wget http://downloads.jasig.org/cas/cas-server-3.5.2-release.tar.gz; \
-	tar xzvf cas-server-3.5.2-release.tar.gz; \
-    cp cas-server-3.5.2/modules/cas-server-webapp-3.5.2.war /var/lib/tomcat7/webapps/cas.war; \
+	wget http://developer.jasig.org/cas/cas-server-4.0.0-release.tar.gz; \
+	tar xzvf cas-server-4.0.0-release.tar.gz; \
+    cp cas-server-4.0.0/modules/cas-server-webapp-4.0.0.war /var/lib/tomcat7/webapps/cas.war; \
     service tomcat7 start; \
     sleep 10; \
     service tomcat7 stop; \
-    cp cas-server-3.5.2/modules/cas-server-support-jdbc-3.5.2.jar /var/lib/tomcat7/webapps/cas/WEB-INF/lib
+    cp cas-server-4.0.0/modules/cas-server-support-jdbc-4.0.0.jar /var/lib/tomcat7/webapps/cas/WEB-INF/lib
 
 # Create CAS authentication DB
 RUN chmod 1777 /tmp; \
