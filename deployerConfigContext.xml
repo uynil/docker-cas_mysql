@@ -94,15 +94,14 @@
     <!-- 密码加密方式-->
     <bean id="passwordEncoder"
       class="org.jasig.cas.authentication.handler.DefaultPasswordEncoder"
-      c:encodingAlgorithm="SHA1"
+      c:encodingAlgorithm="MD5"
       p:characterEncoding="UTF-8" />
       <!-- select password from persion where id=?  查询匹配的字段-->
       <bean id="dbAuthHandler"
       class="org.jasig.cas.adaptors.jdbc.QueryDatabaseAuthenticationHandler"
       p:dataSource-ref="dataSource"
-      p:sql="select password from cas_users where username=? " />
-      <!-- 使用密码加密 -->
-      <!-- p:passwordEncoder-ref="passwordEncoder" -->
+      p:sql="select password from cas_users where username=? "
+      p:passwordEncoder-ref="passwordEncoder"/>
 
 
     <!-- Required for proxy ticket mechanism -->
